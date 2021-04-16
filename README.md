@@ -2,6 +2,8 @@ This project is developed using Tuya SDK, which enables you to quickly develop b
 
 Jinkai Smart MiniCode
 ==
+demo
+---
 
 
 ## Demo 目录
