@@ -10,7 +10,7 @@ If you need to develop device control, scene linkage, automation and other funct
 If you need a doodle public applet to support your device, please contact us. Public version of the small program you can scan the code below the TWO-DIMENSIONAL code experience：
 
 <p align="center">
-<img width=200 src="/image/demo.png" >
+<img width=200 src="https://github.com/cabinhou/iot/blob/main/image/%E9%9D%A2%E6%9D%BF%E8%A7%A3%E5%9B%BE.png" >
 </p>
 
 
