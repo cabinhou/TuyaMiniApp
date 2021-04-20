@@ -1,8 +1,9 @@
 {
   "pages": [
+    
     "pages/guide/index",
-    "pages/home_center/device_list/index",
     "pages/home_center/common_panel/index",
+    "pages/home_center/device_list/index",
     "pages/home_center/device_manage/index",
     "pages/cloud_check/index",
     "pages/function_center/device_connect/index",

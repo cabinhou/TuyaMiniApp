@@ -9,10 +9,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    device_name: '',
+    device_name: '智能插座',
     titleItem: {
-      name: '',
-      value: '',
+      name: '风扇插座',
+      value: '123',
     },
     roDpList: {}, //只上报功能点
     rwDpList: {}, //可上报可下发功能点
@@ -29,11 +29,13 @@ Page({
     this.setData({ device_id })
 
     // mqtt消息监听
+   
     wxMqtt.on('message', (topic, newVal) => {
       const { status } = newVal
       console.log(newVal)
       this.updateStatus(status)
     })
+   
   },
 
   /**
