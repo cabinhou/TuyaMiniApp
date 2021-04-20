@@ -10,7 +10,7 @@ If you need to develop device control, scene linkage, automation and other funct
 If you need a doodle public applet to support your device, please contact us. Public version of the small program you can scan the code below the TWO-DIMENSIONAL code experience：
 
 <p align="center">
-<img width=200 src="/image/面板解图.png" >
+<img width=200 src="/image/demo.png" >
 </p>
 
 
