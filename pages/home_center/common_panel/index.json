@@ -1,4 +1,9 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "智能插座" 
+  "usingComponents": {
+    "navbar": "../../../components/t_navbar/index",
+    "Boolean": "./components/Boolean/index",
+    "Enum": "./components/Enum/index",
+    "Integer": "./components/Integer/index"
+  },
+  "navigationStyle": "custom"
 }
