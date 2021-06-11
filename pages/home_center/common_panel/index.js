@@ -149,7 +149,7 @@ Page({
     //读取插座使用的情况（DP数据）
      console.log(roDpList)
      cur_current = roDpList['cur_current']['value']/1000;  //当前电流(mA)
-     cur_power = roDpList['cur_power']['value'];           //当前功率(W)
+     cur_power = roDpList['cur_power']['value']/100;      //当前功率(W)
      cur_voltage = roDpList['cur_voltage']['value']/10;    //当前电压(V)
 
      
