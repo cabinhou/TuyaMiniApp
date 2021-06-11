@@ -17,7 +17,7 @@ Page({
         url: '/pages/web_view/index'
       },
       {
-        name: '体验 Demo 面板',
+        name: '体验面板',
         text: '体验产品虚拟面板，0距离感受交互效果',
         url: '/pages/home_center/device_list/index'
       },

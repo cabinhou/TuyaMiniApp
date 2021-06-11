@@ -16,6 +16,9 @@ Page({
     },
     roDpList: {}, //只上报功能点
     rwDpList: {}, //可上报可下发功能点
+    cur_current:0,
+    cur_power:0,
+    cur_voltage:0,
     isRoDpListShow: false,
     isRwDpListShow: false,
     forest: '../../../image/forest@2x.png'
@@ -27,11 +30,15 @@ Page({
   onLoad: function (options) {
     const { device_id } = options
     this.setData({ device_id })
-
+    //console.log(device_id)
+    
     // mqtt消息监听
     wxMqtt.on('message', (topic, newVal) => {
       const { status } = newVal
-      console.log(newVal)
+      console.log(status)
+      
+      this.data.today_power = 2
+
       this.updateStatus(status)
     })
   },
@@ -107,11 +114,18 @@ Page({
     const { dpCode, value } = e.detail
     const { device_id } = this.data
 
+
+    console.log(e.detail);
+    console.log("device_id:"+ device_id);
+    console.log("dpCode:"+ dpCode);
+
+    
+
     const { success } = await deviceControl(device_id, dpCode, value)
   },
 
   updateStatus: function (newStatus) {
-    let { roDpList, rwDpList, titleItem } = this.data
+    let { roDpList, rwDpList, titleItem,cur_current,cur_power,cur_voltage } = this.data
 
     newStatus.forEach(item => {
       const { code, value } = item
@@ -131,8 +145,16 @@ Page({
       let keys = Object.keys(rwDpList)[0];
       titleItem = rwDpList[keys];
     }
+
+    //读取插座使用的情况（DP数据）
+     console.log(roDpList)
+     cur_current = roDpList['cur_current']['value']/1000;  //当前电流(mA)
+     cur_power = roDpList['cur_power']['value'];           //当前功率(W)
+     cur_voltage = roDpList['cur_voltage']['value']/10;    //当前电压(V)
+
+     
  
-    this.setData({ titleItem, roDpList: { ...roDpList }, rwDpList: { ...rwDpList } })
+    this.setData({ titleItem,cur_current,cur_power,cur_voltage, roDpList: { ...roDpList }, rwDpList: { ...rwDpList } })
   },
 
   jumpTodeviceEditPage: function(){

@@ -5,49 +5,58 @@
 <navbar device_name="{{device_name}}" bind:jumpTodeviceEditPage="jumpTodeviceEditPage" /> 
 
 <view class="main">
-    <view class="item head">
-      <view class="headitem">
-        <view class="headitem-value">0.16</view>   
-        <view class="headitem-name">今日电量（度）</view>   
-      </view>   
 
-      <view class="headitem">
-        <view class="headitem-value">11.80</view>   
-        <view class="headitem-name">本月电量（度）</view>   
-      </view>   
 
-      <view class="headitem">
-        <view class="headitem-value">0.56</view>   
-        <view class="headitem-name">当前功率（W）</view>   
-      </view>   
+  <!-- <block wx:if="{{isRoDpListShow}}">
+    <view class="statuslist">
+      <block wx:for="{{roDpList}}" wx:key="{{item.code}}" wx:for-item="item" wx:for-index='idx'>
+        <view class="{{utils.countDpItem(roDpListLength,idx)}}">
+          <view class="roDpItem-dpName">{{item.code}}</view>
+          <view class="roDpItem-status">{{item.value}}</view>
+        </view>
+      </block>
     </view>
+  </block> -->
 
+
+  <view class="scroll-view">
+    <view class="datashow">
+        <view class="headitem">
+          <view class="headitem-value">{{cur_current}}</view>   
+          <view class="headitem-name">当前电流</view>   
+        </view>   
+
+        <view class="headitem">
+          <view class="headitem-value">{{cur_power}}</view>   
+          <view class="headitem-name">当前功率</view>   
+        </view>   
+
+        <view class="headitem">
+          <view class="headitem-value">{{cur_voltage}}</view>   
+          <view class="headitem-name">当前电压</view>   
+        </view>   
+    </view>
+  </view>
+
+  
      <!--Content Start-->
     <view class="item content">
-      <image class="content_image"  src='/image/PowerOn.png' bind:sendDp="sendDp"></image>    
+      <image class="content_image"   src='/image/PowerOn.png' 
+         dpCode="switch" dpName="2"  bind:sendDp="sendDp"></image>    
 
       <view class="header-dpValue-on" wx:if="{{titleItem.value}}">已开启</view>
       <view class="header-dpValue-off" wx:else >已关闭</view>
+    </view>
+    <!--Content End-->
 
-      <!-- <view class="common-panel-header">
-        <view class="common-panel-header-block">
-          <view class="common-panel-header-dpName">{{titleItem.name}}</view>
-          <view class="common-panel-header-dpValue">{{titleItem.value}}</view>
-        </view>
-      </view>  -->
 
-      <!-- <block wx:if="{{isRoDpListShow}}">
-          <view class="statuslist">
-            <block wx:for="{{roDpList}}" wx:key="{{item.code}}" wx:for-item="item" wx:for-index='idx'>
-              <view class="{{utils.countDpItem(roDpListLength,idx)}}">
-                <view class="roDpItem-dpName">{{item.code}}</view>
-                <view class="roDpItem-status">{{item.value}}</view>
-              </view>
-            </block>
-          </view>
-        </block> -->
+ 
 
-        <view class="scroll-view">
+   
+
+
+    
+    <view class="scroll-view">
           <block wx:if="{{isRwDpListShow}}">
             <block wx:for="{{rwDpList}}" wx:key="{{item.code}}" wx:for-item="item">
               <block wx:if="{{item.type === 'Boolean'}}">
@@ -63,10 +72,9 @@
               </block>
             </block>
           </block>
-        </view> 
+    </view> 
 
-    </view>
-    <!--Content End-->
+   
 
 
 

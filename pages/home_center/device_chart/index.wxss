@@ -1,0 +1,35 @@
+.tabs-container {
+  margin: 20rpx;
+}
+
+.nav-class {
+  display: flex;
+  justify-content: space-around;
+  -webkit-border-radius: 20rpx;
+  -moz-border-radius: 20rpx;
+  border-radius: 20rpx;
+}
+.tab-active-class {
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 10rpx;
+  -moz-border-radius: 10rpx;
+  border-radius: 10rpx;
+  background-color: yellow;
+  transition: all .2s;
+}
+.tab-class {
+  display: none;
+}
+.van-tabs--line .van-tabs__wrap {
+  -webkit-border-radius: 20rpx;
+  -moz-border-radius: 20rpx;
+  border-radius: 20rpx;
+    
+} 
+
+
+.index-tabs .van-tab--active .van-ellipsis {
+  color: #ff6969;
+} 
+

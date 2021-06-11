@@ -1,7 +1,8 @@
 {
   "pages": [
-    
+    "pages/home_center/device_chart/index",
     "pages/guide/index",
+    "pages/home_center/echarsDemo/index",
     "pages/home_center/common_panel/index",
     "pages/home_center/device_list/index",
     "pages/home_center/device_manage/index",
@@ -9,6 +10,7 @@
     "pages/function_center/device_connect/index",
     "pages/web_view/index",
     "pages/base_function/index"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

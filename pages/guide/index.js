@@ -18,13 +18,13 @@ Page({
         url: '/pages/base_function/index'
       },
       {
-        name: '体验 Demo 面板',
+        name: '设备面板',
         url: '/pages/home_center/device_list/index'
       },
-      {
-        name: '体验涂鸦小程序',
-        url: 'navigateToMiniProgram'
-      }
+      // {
+      //   name: '体验涂鸦小程序',
+      //   url: 'navigateToMiniProgram'
+      // }
     ]
   },
 
