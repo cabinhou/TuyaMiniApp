@@ -1,0 +1,50 @@
+<!--pages/home_center/power_statistics/index.wxml-->
+<navbar device_name="电量统计" color="#000"/>
+<view style="height:50rpx;"/>
+<view class="container">
+    <canvas canvas-id="lineCanvas" disable-scroll="false" class="canvas" bindtouchstart="touchHandler"></canvas>
+</view>
+
+<view class="bottom-view">
+    <view class="noWarp">
+        <text>开始时间：</text>
+        <view class="noWarp-item">
+            <view class="noWarp-item">
+                <picker mode="date" value="{{start_date}}" start="2020-01-01" end="2999-12-01" data-data_name="start_date" bindchange="bindPickerChange">
+                    <text space="nbsp">{{start_date}}</text>
+                </picker>
+            </view>
+            <view class="noWarp-item">
+                <picker mode="time" value="{{start_time}}" start="00:00" end="23:59" data-data_name="start_time" bindchange="bindPickerChange">
+                    <text space="nbsp"> {{start_time}} </text>
+                </picker>
+            </view>
+            <van-icon size="20" name="arrow"/>
+        </view>
+    </view>
+    <view class="noWarp">
+        <text>结束时间：</text>
+        <view class="noWarp-item">
+            <view class="noWarp-item">
+                <picker mode="date" value="{{end_date}}" start="2020-01-01" end="2999-12-01" data-data_name="end_date" bindchange="bindPickerChange">
+                    <text space="nbsp">{{end_date}}</text>
+                </picker>
+            </view>
+            <view class="noWarp-item">
+                <picker mode="time" value="{{end_time}}" start="00:00" end="23:59" data-data_name="end_time" bindchange="bindPickerChange">
+                    <text space="nbsp"> {{end_time}} </text>
+                </picker>
+            </view>
+            <van-icon size="20" name="arrow"/>
+        </view>
+    </view>
+
+    <view style="height:50rpx;"/>
+
+    <view class="bottom-container">
+        <button bindtap="showTodayStatistics">今天</button>
+        <button bindtap="showCurWeekStatistics">本周</button>
+        <button bindtap="showCurMonthStatistics">本月</button>
+        <button bindtap="showCurYearStatistics">今年</button>
+    </view>
+</view>

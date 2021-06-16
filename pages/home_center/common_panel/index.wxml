@@ -79,19 +79,19 @@
           <image class="bottom_image"  src='/image/Power.png'></image>
           <view class="bottom_name">开关</view>
       </view>
-      <view class="footitem">
+      <view class="footitem" bindtap="jumpToTimerManagePage">
         <image class="bottom_image"  src='/image/schema.png'></image>
         <view class="bottom_name">定时</view>
       </view>
-      <view class="footitem">
+      <view class="footitem" bind:tap="jumpToTimerEditPage">
         <image class="bottom_image"  src='/image/Timer.png'></image>
         <view class="bottom_name">倒计时</view>
       </view>
-      <view class="footitem">
-        <navigator url='/pages/home_center/charts/column/column'>
+      <view class="footitem" bind:tap="jumpToPowerStatisticsPage">
+        <!-- <navigator url='/pages/home_center/charts/column/column'> -->
           <image class="bottom_image"  src='/image/Todaydianliang.png'></image>
           <view class="bottom_name">功耗</view>
-        </navigator>
+        <!-- </navigator> -->
       </view>
     </view> 
    <!--Footer End-->

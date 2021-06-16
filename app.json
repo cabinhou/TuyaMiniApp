@@ -1,18 +1,22 @@
 {
   "pages": [
+    
     "pages/guide/index",
+    "pages/home_center/timer_edit_page/index",
+    "pages/home_center/timer_manage/index",
+    "pages/home_center/power_statistics/index",
+    
     "pages/home_center/charts/column/column",
     "pages/home_center/charts/line/line",
     "pages/home_center/tab/index",
-    
     "pages/home_center/common_panel/index",
     "pages/home_center/device_list/index",
     "pages/home_center/device_manage/index",
     "pages/cloud_check/index",
     "pages/function_center/device_connect/index",
     "pages/web_view/index",
-    "pages/base_function/index"
-    
+    "pages/base_function/index",
+    "pages/home_center/device_chart/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

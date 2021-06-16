@@ -1,0 +1,67 @@
+<!--pages/home_center/timer_edit_page/index.wxml-->
+<navbar device_name="编辑定时器" color="#000"/>
+<view>
+  <!-- <text>{{timer_id}} - {{date}} - {{time}} - {{loops}} - {{status}} - {{functions[0].value}}</text> -->
+  <view class="timer_settings_line">
+    <text>名称 </text>
+    <view class="timer_settings_line" style="padding:0;margin:0;">
+      <input wx:if="{{alias_name.length == 0}}" style="text-align:right;" value="定时器" maxlength="10" focus bindblur="onInputBlur"></input>
+      <input wx:else value="{{alias_name}}" style="text-align:right;" maxlength="10" focus bindblur="onInputBlur"></input>
+      <van-icon size="20" name="edit"/>
+    </view>
+  </view>
+  <view class="timer_settings_line">
+    <text>定时器动作</text>
+    <switch checked="{{switch_action_on}}" catchtap="nullFunction" data-bind_var_name="switch_action_on" bindchange="onSwitchChange"></switch>
+  </view>
+
+  <view class="timer_settings_line">
+    <text>倒计时</text>
+    <switch checked="{{is_countdown}}" catchtap="nullFunction" data-bind_var_name="is_countdown" bindchange="onSwitchChange"></switch>
+  </view>
+
+  <view wx:if="{{is_countdown}}">
+    <view class="timer_settings_line">
+      <text>倒计时时间(时:分)</text>
+      <picker mode="time" value="{{countdown}}" start="00:00" end="23:59" data-bind_var_name="countdown" bindchange="bindPickerChange">
+        <text>{{countdown}}</text>
+      </picker>
+    </view>
+  </view>
+  <view wx:else> 
+    <view class="timer_settings_line">
+      <text>定时时间</text>
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59"  data-bind_var_name="time" bindchange="bindPickerChange">
+        <text>{{time}}</text>
+      </picker>
+    </view>
+
+    <view class="timer_settings_line">
+      <text>循环定时</text>
+      <switch checked="{{is_loop}}" catchtap="nullFunction" data-bind_var_name="is_loop" bindchange="onSwitchChange"></switch>
+    </view>
+
+    <view class="timer_settings_line" wx:if="{{is_loop}}">
+      <view style="width:100%">
+        <text>循环周期</text>
+        <view class="week_table">
+          <view wx:for="{{loops}}" >
+            <view class="v_center">
+              <text>{{week_name[index]}}</text>
+              <switch type="checkbox" checked="{{item == 1}}" data-weekday="{{index}}" bindchange="onWeekdayChange"></switch>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="timer_settings_line" wx:if="{{is_loop == false}}">
+      <text>定时日期</text>
+      <picker mode="date" value="{{date}}"  data-bind_var_name="date" bindchange="bindPickerChange">
+        <text>{{date}}</text>
+      </picker>
+    </view>
+  </view>
+
+  <button type="primary" bindtap="addOrEditTimer">确定</button>
+</view>

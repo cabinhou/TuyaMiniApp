@@ -1,0 +1,7 @@
+function my_slice(str,s,e)
+{
+  return str.slice(s,e);
+}
+module.exports = {
+  my_slice: my_slice
+}

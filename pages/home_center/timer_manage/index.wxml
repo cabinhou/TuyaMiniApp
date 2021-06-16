@@ -1,0 +1,46 @@
+<!--pages/home_center/timer_manage/index.wxml-->
+<wxs src="./string.wxs" module="tools"/>
+
+<navbar device_name="定时任务" color="#000"/>
+<template name="timer_info">
+    <view class="timer-info-block">
+      <!-- <text>{{timer_id}} - {{date}} - {{time}} - {{loops}} - {{status}} - {{functions[0].value}}</text> -->
+      <view class="timer_info_head">
+        <text wx:if="{{alias_name.length == 0}}">未命名</text>
+        <text wx:else>{{alias_name}}</text>
+      </view>
+      <view class="timer_info_body">
+        <label class="timer_info_body_item">
+          <switch type="checkbox" checked="{{status}}" class="timer_info_body_item" catchtap="nullFunction" data-group_id="{{group_id}}" bindchange="toggleEnableTimer"></switch>
+          <text>启用</text>
+        </label>
+        <image wx:if="{{functions[0].value}}" class="base-icon-images timer_info_body_item" src="../../../image/dengOn.png"/>
+        <image wx:else class="base-icon-images timer_info_body_item" src="../../../image/dengOff.png"/>
+        <text wx:if="{{loops=='0000000'}}">{{tools.my_slice(date, 0, 4) + "-" + tools.my_slice(date, 4, 6) + "-" + tools.my_slice(date, 6, 8)}}</text>
+        <block wx:else>
+          <block wx:for="{{loops}}">
+            <text class="timer_week_text {{item == 0 ? 'timer_week_text_disabled' : ''}}">{{week_name[index]}}</text>
+          </block>
+        </block>
+        <text class="timer_info_body_item" space="nbsp"> {{time}}</text>
+        <van-icon class="timer_info_body_item" size="20" name="arrow"/>
+      </view>
+    </view>
+</template>
+
+<view class="timer_list root">
+<!-- <text style="align:center">{{device_name}}的定时器：</text> -->
+<view wx:if="{{timer_list.length <= 0}}">
+  <text>没有定时器</text>
+</view>
+<view wx:else>
+    <view wx:for="{{timer_list.groups}}">
+      <view data-timer_group_id="{{item.id}}" bindtap="editTimer">
+        <template is="timer_info" data="{{...item.timers[0], device_icon, group_id: item.id, week_name}}"/>
+      </view>
+    </view>
+</view>
+</view>
+<view class="bottom-view">
+  <button style="width:100%" bindtap="jumpToEditTimerPage">添加定时器</button>
+</view>

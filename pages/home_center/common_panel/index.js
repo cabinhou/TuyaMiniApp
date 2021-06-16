@@ -163,5 +163,31 @@ Page({
     wx.navigateTo({
       url: `/pages/home_center/device_manage/index?device_id=${device_id}&device_name=${device_name}&device_icon=${icon}`,
     })
+  },
+
+  jumpToTimerManagePage: function()
+  {
+    const { icon, device_id, device_name } = this.data
+    wx.navigateTo({
+      url: `/pages/home_center/timer_manage/index?device_id=${device_id}&device_name=${device_name}&device_icon=${icon}`,
+    })
+  },
+
+  jumpToTimerEditPage: function()
+  {
+    const { icon, device_id, device_name } = this.data
+    wx.navigateTo({
+      url: `/pages/home_center/timer_edit_manage/index?device_id=${device_id}&device_name=${device_name}&device_icon=${icon}`,
+    })
+  },
+
+  jumpToPowerStatisticsPage: function()
+  {
+    const { icon, device_id, device_name } = this.data
+    wx.navigateTo({
+      url: `/pages/home_center/power_statistics/index?device_id=${device_id}&device_name=${device_name}&device_icon=${icon}`,
+    })
   }
+
+
 })

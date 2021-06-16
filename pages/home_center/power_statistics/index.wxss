@@ -1,0 +1,55 @@
+/* pages/home_center/power_statistics/index.wxss */
+.container
+{
+    margin: 5rpx;
+}
+.noWarp{
+  display: flex;
+  background-color: transparent;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width:100%;
+  margin: 5rpx;
+}
+
+.noWarp-item {
+  display:flex;
+}
+
+.gray-border {
+  border:1rpx solid gray;
+}
+
+.bottom-view {
+  position: fixed;
+  bottom: 50rpx;
+  width:100%;
+}
+.bottom-container {
+  display: flex;
+  background-color: transparent;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width:100%;
+}
+
+.bottom-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-item {
+  display:flex;
+  width: 48px;
+  height: 48px;
+}
+
+.hover{
+  background-color: gray;
+}
