@@ -16,7 +16,7 @@
         </view>
       </block>
     </view>
-  </block> -->
+  </block>  -->
 
 
   <view class="scroll-view">
@@ -42,9 +42,9 @@
      <!--Content Start-->
     <view class="item content">
       <image class="content_image"   src='/image/PowerOn.png' 
-         dpCode="switch" dpName="2"  bind:sendDp="sendDp"></image>    
+               dpCode="switch" dpName="2"     bind:sendDp="sendDp"></image>    
 
-      <view class="header-dpValue-on" wx:if="{{titleItem.value}}">已开启</view>
+      <view class="header-dpValue-on" wx:if="{{isSwitch}}">已开启</view>
       <view class="header-dpValue-off" wx:else >已关闭</view>
     </view>
     <!--Content End-->
@@ -83,7 +83,7 @@
         <image class="bottom_image"  src='/image/schema.png'></image>
         <view class="bottom_name">定时</view>
       </view>
-      <view class="footitem" bind:tap="jumpToTimerEditPage">
+      <view class="footitem" >
         <image class="bottom_image"  src='/image/Timer.png'></image>
         <view class="bottom_name">倒计时</view>
       </view>

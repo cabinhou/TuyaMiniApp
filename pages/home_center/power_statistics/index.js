@@ -69,7 +69,7 @@ Page({
     });
 }, 
 
-refreshStatistics : async function ()
+refreshStatistics : async function (periodType)
 {
   const { start_date, end_date, start_time, end_time } = this.data;
   console.log({ start_date, end_date, start_time, end_time });
@@ -84,10 +84,9 @@ refreshStatistics : async function ()
   }
 
   let statisticData, chartData;
-  if (start_date == end_date)
-  {
 
-    console.log("today");
+  if (periodType=="day")
+  {
 
     if (start_time.slice(0, 2) == end_time.slice(0, 2))
     {
@@ -115,11 +114,9 @@ refreshStatistics : async function ()
     var newhours = {};
    
      hours_keys.forEach(element => {
-       
          //取出日期的后两位（2021061600、2021061601），即：00、01 时间点
          //console.log(element);
          newhours[" "+element.substr(8,2)] = statisticData.hours[element];   
-      
      });
 
     console.log("newhours:");
@@ -131,6 +128,7 @@ refreshStatistics : async function ()
       data: Object.values(newhours)
     };
   }
+  
   else
   {
       statisticData = await this.getDayPowerStatistic(start_date.replaceAll("-", ""), end_date.replaceAll("-", ""));
@@ -141,6 +139,7 @@ refreshStatistics : async function ()
         data: Object.values(statisticData.days)
       };
   }
+  
   
   this.updateData(chartData);
   
@@ -156,7 +155,7 @@ showTodayStatistics : async function ()
   let end_time = "23:59";
 
   this.setData({start_date, start_time, end_date, end_time});
-  this.refreshStatistics();
+  this.refreshStatistics("day");
 
 },
 
@@ -171,7 +170,7 @@ showCurWeekStatistics : async function ()
   let end_time = "23:59";
 
   this.setData({start_date, start_time, end_date, end_time});
-  this.refreshStatistics();
+  this.refreshStatistics("week");
 
 },
 
@@ -186,7 +185,7 @@ showCurMonthStatistics : async function ()
   let end_time = "23:59";
 
   this.setData({start_date, start_time, end_date, end_time});
-  this.refreshStatistics();
+  this.refreshStatistics("month");
 
 },
 
@@ -204,7 +203,7 @@ showCurYearStatistics : async function ()
   console.log("yearEnd:" + yearEnd);
 
   this.setData({start_date, start_time, end_date, end_time});
-  this.refreshStatistics();
+  this.refreshStatistics("year");
 
 
 },

@@ -189,17 +189,14 @@
  }
 
  .header-dpValue-on{
-  color: white  ;
+  color:rgb(255, 0, 0)  ;
  }
 
  .header-dpValue-off{
   color: rgb(32, 141, 184)  ;
  }
 
-
-
 .foot {
-  
   height: 200rpx;
   width: 100%;
 
