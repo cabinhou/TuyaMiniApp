@@ -13,10 +13,9 @@
 
 <p align="center">
   <img width=200 src="/面板截图.png" >
-</p>
-<p align="center">
   <img width=200 src="/面板截图2.png" >
 </p>
+
 
 
 ## Demo 目录
