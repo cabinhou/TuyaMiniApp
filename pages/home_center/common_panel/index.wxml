@@ -41,8 +41,12 @@
   
      <!--Content Start-->
     <view class="item content">
-      <image class="content_image"   src='/image/PowerOn.png' 
-               dpCode="switch" dpName="2"     bind:sendDp="sendDp"></image>    
+      <image class="content_image" wx:if="{{isSwitch}}" src='/image/PowerOn.png' 
+               dpCode="switch" dpName="2"     bind:sendDp="sendDp"></image>   
+
+      <image class="content_image" wx:if="{{!isSwitch}}" src='/image/PowerOff.png' 
+               dpCode="switch" dpName="2"     bind:sendDp="sendDp"></image> 
+
 
       <view class="header-dpValue-on" wx:if="{{isSwitch}}">已开启</view>
       <view class="header-dpValue-off" wx:else >已关闭</view>

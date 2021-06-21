@@ -156,7 +156,7 @@ Page({
     // console.log(titleItem)
      
      cur_current = roDpList['cur_current']['value']/1000;  //当前电流(mA)
-     cur_power = roDpList['cur_power']['value']/100;      //当前功率(W)
+     cur_power = roDpList['cur_power']['value']/10;      //当前功率(W)
      cur_voltage = roDpList['cur_voltage']['value']/10;    //当前电压(V)
 
      
@@ -164,6 +164,12 @@ Page({
     this.setData({ titleItem,cur_current,cur_power,cur_voltage, 
                    roDpList: { ...roDpList }, rwDpList: { ...rwDpList } })
   },
+
+  // PowerSwitch: function (){
+  //   this.setData( {isSwitch : !this.isSwitch});
+
+  //   console.log(this.isSwitch);
+  // },
 
   jumpTodeviceEditPage: function(){
     console.log('jumpTodeviceEditPage')
