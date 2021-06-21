@@ -12,8 +12,10 @@
 如果需要涂鸦公版小程序来支持您的设备，可以联系我们。公版小程序的您可以扫码下面的二维码体验：
 
 <p align="center">
-<img width=200 src="/面板截图.png" >
-<img width=200 src="/面板截图2.png" >
+  <img width=200 src="/面板截图.png" >
+</p>
+<p align="center">
+  <img width=200 src="/面板截图2.png" >
 </p>
 
 
